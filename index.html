@@ -1,124 +1,177 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HBD Bunn!</title>
-    <link rel="icon" href="https://i.pinimg.com/736x/75/48/da/7548da8803afab737c48fdde07f884b1.jpg" type="image/x-icon">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #ffebee;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-image: url('https://wallpapers.com/images/hd/birthday-balloons-pictures-nz04y562muflt43r.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #d32f2f;
-        }
-        
-        .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            margin: 20px;
-        }
-        
-        h1 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #c2185b;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        .message {
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #333;
-        }
-        
-        .doa-box {
-            background-color: #f8bbd0;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border-left: 5px solid #c2185b;
-        }
-        
-        .doa-title {
-            font-weight: bold;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            color: #880e4f;
-        }
-        
-        .heart {
-            color: #e91e63;
-            font-size: 2em;
-            animation: beat 1s infinite alternate;
-            display: inline-block;
-        }
-        
-        @keyframes beat {
-            to {
-                transform: scale(1.2);
-            }
-        }
-        
-        .signature {
-            font-style: italic;
-            margin-top: 30px;
-            font-size: 1.1em;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Santi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: #0a192f;
+      color: #e6f1ff;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: none; /* DISIMPAN SAAT PERTAMA */
+      text-align: center;
+      max-width: 90%;
+      padding: 1rem;
+    }
+
+    .profile-pic {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .message {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      padding: 0 1rem;
+    }
+
+    footer {
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(0.95); }
+      75% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
-    <div class="container" id="birthdayCard" style="display: none;">
-        <h1>Bunda <hr><span class="heart">Happy Birthday</span></h1>
-        
-        <div class="message">
-            <p><strong>Selamat ulang tahun!</strong> Semoga panjang umur, sehat dan bahagia selalu.</p>
-            <p>Terima kasih untuk semua kasih sayang, pengorbanan, dan doa-doa yang tak pernah berhenti mengalir untukku.</p>
-        </div>
-        
-        <div class="doa-box">
-            <div class="doa-title">Doa untuk Bundaa :</div>
-            <p>"Ya Allah, limpahkanlah rahmat-Mu untuk bundaku. Panjangkan umurnya dalam ketaatan kepada-Mu, sehatkan tubuhnya, lapangkan rezekinya, dan bahagiakan hatinya.</p>
-            <p>Ampunilah dosa-dosanya, tinggikan derajatnya, dan tempatkanlah ia di surga-Mu kelak. Lindungilah ia dari segala penyakit, kesusahan, dan kesedihan."</p>
-            <p>Aamiin Ya Rabbal 'Alamin.</p>
-        </div>
-        
-        <div class="signature">
-            <p>@farhan</p>
-        </div>
-    </div>
+  <div class="container" id="content">
+    <img src="img.jpg" alt="Santi" class="profile-pic" id="photo" />
+    <h1 class="title">Happy Birthday Santi</h1>
+    <p class="message">
+      Selamat Ulang Tahun ya sann, semoga setiap langkah kamu diberkahi kebahagiaan dan setiap mimpi kamu perlahan menjadi kenyataan, sehat selalu ya cantik!
+    </p>
+    <footer>© <span id="#"></span> zinniaahell</footer>
+  </div>
 
-    <script>
-        // Tampilkan 3 alert berturut-turut
-        setTimeout(() => {
-            alert("Haloo bunn...");
-            
-            setTimeout(() => {
-                alert("Maaf yahh kemarin farhan sibuk belajar trus ketiduran deh hehehe...");
-                
-                setTimeout(() => {
-                    alert("Selamat ulang tahun bunn - June 10, 2025");
-                    
-                    // Tampilkan kartu ulang tahun setelah alert terakhir
-                    document.getElementById('birthdayCard').style.display = 'block';
-                    
-                }, 1000);
-            }, 1000);
-        }, 500);
-    </script>
+  <canvas id="confetti"></canvas>
+
+  <script>
+    // Jalankan alert satu per satu lalu tampilkan konten
+    window.addEventListener('DOMContentLoaded', () => {
+      const alerts = ["Hi", "Apa kabar?", "Can you be serious?", "Sehat selalu ya..."];
+      let i = 0;
+
+      const showNextAlert = () => {
+        if (i < alerts.length) {
+          alert(alerts[i]);
+          i++;
+          setTimeout(showNextAlert, 300); // jeda ringan antar alert
+        } else {
+          document.getElementById('content').style.display = 'block';
+          document.getElementById('year').textContent = new Date().getFullYear();
+        }
+      };
+
+      showNextAlert();
+    });
+
+    // Heartbeat dan confetti saat klik foto
+    const photo = document.getElementById("photo");
+
+    if (photo) {
+      photo.addEventListener("click", () => {
+        photo.style.animation = "heartbeat 0.6s ease";
+        setTimeout(() => photo.style.animation = "", 600);
+        launchConfetti();
+      });
+    }
+
+    // Confetti
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const confettiPieces = [];
+
+    function launchConfetti() {
+      for (let i = 0; i < 100; i++) {
+        confettiPieces.push({
+          x: random(0, canvas.width),
+          y: random(-canvas.height, 0),
+          size: random(2, 6),
+          color: `hsl(${random(0, 360)}, 70%, 60%)`,
+          speedY: random(1, 3),
+          speedX: random(-1, 1)
+        });
+      }
+    }
+
+    function animateConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      confettiPieces.forEach((p, index) => {
+        p.y += p.speedY;
+        p.x += p.speedX;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+
+        if (p.y > canvas.height) {
+          confettiPieces.splice(index, 1);
+        }
+      });
+
+      requestAnimationFrame(animateConfetti);
+    }
+
+    animateConfetti();
+  </script>
 </body>
 </html>
